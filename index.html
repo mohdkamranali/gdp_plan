@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operation ₹10 Trillion — A Masterplan</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --paper: #f5f0e8;
+    --saffron: #e8621a;
+    --green: #1a6b3a;
+    --red: #c0392b;
+    --stamp: #8b1a1a;
+    --muted: #7a6e5f;
+    --border: #c8b99a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #2c2416;
+    font-family: 'Space Mono', monospace;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .document {
+    max-width: 860px;
+    margin: 0 auto;
+    background: var(--paper);
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,160,120,0.15) 27px, rgba(180,160,120,0.15) 28px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    box-shadow: 0 20px 80px rgba(0,0,0,0.6), inset 0 0 60px rgba(180,150,100,0.1);
+    position: relative;
+    overflow: hidden;
+    animation: unfurl 0.8s ease-out;
+  }
+
+  @keyframes unfurl {
+    from { opacity: 0; transform: translateY(30px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .corner-seal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 90px;
+    height: 90px;
+    border: 3px solid var(--stamp);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 8px;
+    font-weight: 700;
+    color: var(--stamp);
+    letter-spacing: 1px;
+    line-height: 1.4;
+    transform: rotate(12deg);
+    opacity: 0.7;
+    padding: 10px;
+  }
+
+  .watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-35deg);
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    color: rgba(200, 100, 50, 0.06);
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: 8px;
+  }
+
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: 50px 60px;
+  }
+
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px double var(--border);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+  }
+
+  .classification {
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--red);
+    border: 2px solid var(--red);
+    padding: 4px 10px;
+    display: inline-block;
+  }
+
+  .doc-number {
+    font-size: 9px;
+    color: var(--muted);
+    text-align: right;
+    line-height: 1.8;
+  }
+
+  .header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .ministry-tag {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  h1 span {
+    color: var(--saffron);
+  }
+
+  .subtitle {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 2px;
+    margin-top: 12px;
+    font-style: italic;
+  }
+
+  .gdp-bar {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 24px;
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+
+  .gdp-bar .arrow {
+    font-size: 20px;
+    color: var(--saffron);
+  }
+
+  .gdp-bar .target {
+    color: var(--saffron);
+  }
+
+  .intro {
+    font-size: 12px;
+    line-height: 2;
+    color: var(--muted);
+    border-left: 3px solid var(--saffron);
+    padding-left: 20px;
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  .section {
+    margin-bottom: 40px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .section-header {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 14px 24px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .section-number {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--saffron);
+    font-weight: 700;
+    white-space: nowrap;
+    padding-top: 3px;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .section-revenue {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--green);
+    background: rgba(26,107,58,0.2);
+    padding: 4px 12px;
+    white-space: nowrap;
+    align-self: start;
+  }
+
+  .section-body {
+    padding: 24px;
+  }
+
+  .mechanism {
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .fine-print {
+    font-size: 10px;
+    color: var(--muted);
+    font-style: italic;
+    border-top: 1px dashed var(--border);
+    padding-top: 12px;
+    line-height: 1.8;
+  }
+
+  .fine-print strong {
+    color: var(--red);
+    font-style: normal;
+  }
+
+  .calc-box {
+    background: rgba(26,18,8,0.05);
+    border: 1px dashed var(--border);
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 11px;
+    line-height: 2;
+  }
+
+  .calc-box .total {
+    font-weight: 700;
+    color: var(--green);
+    border-top: 1px solid var(--border);
+    margin-top: 8px;
+    padding-top: 8px;
+  }
+
+  .summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+    font-size: 12px;
+  }
+
+  .summary-table th {
+    background: var(--ink);
+    color: var(--saffron);
+    padding: 12px 16px;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 10px;
+  }
+
+  .summary-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border);
+    word-break: break-word;
+  }
+
+  .summary-table tr:nth-child(even) td {
+    background: rgba(200,185,154,0.2);
+  }
+
+  .summary-table .revenue-col {
+    color: var(--green);
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .grand-total-row td {
+    background: var(--ink) !important;
+    color: var(--paper);
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .grand-total-row .revenue-col {
+    color: var(--saffron) !important;
+  }
+
+  .gap-section {
+    border: 2px solid var(--red);
+    padding: 20px 24px;
+    margin: 30px 0;
+  }
+
+  .gap-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--red);
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+
+  .gap-section p {
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+  }
+
+  .gap-section .gap-number {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--red);
+    margin: 10px 0;
+  }
+
+  .footer-stamp {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 3px double var(--border);
+  }
+
+  .stamp-box {
+    display: inline-block;
+    border: 4px solid var(--stamp);
+    padding: 12px 30px;
+    transform: rotate(-2deg);
+    color: var(--stamp);
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 4px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+
+  .disclaimer {
+    font-size: 9px;
+    color: var(--muted);
+    line-height: 1.9;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    font-style: italic;
+  }
+
+  .tag {
+    display: inline-block;
+    font-size: 9px;
+    letter-spacing: 2px;
+    padding: 2px 8px;
+    margin-right: 6px;
+    font-weight: 700;
+  }
+
+  .tag.absurd { background: var(--red); color: white; }
+  .tag.genius { background: var(--green); color: white; }
+  .tag.inevitable { background: var(--saffron); color: white; }
+
+  .copyright-bar {
+    background: var(--ink);
+    color: var(--muted);
+    text-align: center;
+    padding: 18px 24px;
+    font-size: 9px;
+    line-height: 2;
+    letter-spacing: 1px;
+  }
+
+  .copyright-bar .highlight {
+    color: var(--saffron);
+    font-weight: 700;
+  }
+
+  .copyright-bar .names {
+    color: rgba(245,240,232,0.35);
+    font-style: italic;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    body { padding: 8px; }
+
+    .content { padding: 20px 16px; }
+
+    .corner-seal { width: 60px; height: 60px; font-size: 6px; top: 10px; right: 10px; }
+
+    .watermark { font-size: 28px; }
+
+    .top-bar { flex-direction: column; gap: 8px; }
+
+    .doc-number { text-align: left; }
+
+    h1 { font-size: 24px; }
+
+    h1 + h1, .h1-sub { font-size: 15px; }
+
+    .ministry-tag { font-size: 8px; letter-spacing: 2px; }
+
+    .subtitle { font-size: 9px; letter-spacing: 1px; }
+
+    .gdp-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      padding: 12px 14px;
+    }
+
+    .section-header {
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
+      gap: 6px;
+      padding: 12px 14px;
+    }
+
+    .section-revenue {
+      grid-column: 2;
+      grid-row: 2;
+      justify-self: start;
+      font-size: 10px;
+    }
+
+    .section-title { font-size: 15px; }
+
+    .section-body { padding: 14px; }
+
+    .mechanism { font-size: 11px; }
+
+    .calc-box { font-size: 10px; padding: 10px 12px; }
+
+    .fine-print { font-size: 9px; }
+
+    .summary-table { font-size: 10px; }
+
+    .summary-table th { font-size: 8px; padding: 8px 10px; }
+
+    .summary-table td { padding: 8px 10px; }
+
+    .grand-total-row td { font-size: 11px; }
+
+    .gap-section { padding: 14px; }
+
+    .gap-section .gap-number { font-size: 18px; }
+
+    .stamp-box { font-size: 14px; letter-spacing: 2px; padding: 10px 20px; }
+
+    .disclaimer { font-size: 8px; }
+
+    .copyright-bar { font-size: 8px; padding: 14px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="document">
+  <div class="watermark">CLASSIFIED</div>
+
+  <div class="corner-seal">
+    GOVT OF<br>INDIA<br>★<br>EYES<br>ONLY
+  </div>
+
+  <div class="content">
+
+    <div class="top-bar">
+      <div>
+        <div class="classification">TOP SECRET</div>
+        <div style="font-size:9px; color:var(--muted); margin-top:6px;">Ref: MOF/GDP/2026/ABSURD/001</div>
+      </div>
+      <div class="doc-number">
+        Ministry of Finance<br>
+        New Delhi — 110001<br>
+        Fiscal Year: 2026
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="ministry-tag">Government of India — Planning Commission (Revived)</div>
+      <h1>Operation <span>₹10 Trillion</span></h1>
+      <h1 style="font-size:22px; color:var(--muted); font-style:italic;">A Masterplan for GDP Growth</h1>
+      <div class="subtitle">Extracting national income from places economists forgot to look</div>
+    </div>
+
+    <div class="gdp-bar">
+      <span>CURRENT GDP: <span style="color:#aaa">$4 Trillion</span></span>
+      <span class="arrow">→→→</span>
+      <span>TARGET: <span class="target">$10 Trillion</span></span>
+      <span style="font-size:11px; color:#aaa">GAP: $6 Trillion</span>
+    </div>
+
+    <div class="intro">
+      This document outlines a comprehensive revenue generation strategy for the Government of India. All measures herein have been carefully designed to avoid inconveniencing corporations, industrialists, or anyone who attends Davos. The burden of national prosperity shall be distributed equitably across citizens, their basic biological functions, and their moments of greatest vulnerability.
+    </div>
+
+    <!-- MEASURE 01 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 01</span>
+        <span class="section-title">Carbon Credit on Human Breathing</span>
+        <span class="section-revenue">~$0.64B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+          <span class="tag inevitable">INEVITABLE</span>
+        </div>
+        <div class="mechanism">
+          Every Indian citizen exhales approximately 0.073 tonnes of CO₂ annually. Under this measure, each citizen must purchase a breathing permit at the prevailing carbon credit rate. Non-compliance renders the act of respiration a punishable offence under the Environment Protection Act, amended for convenience.
+        </div>
+        <div class="calc-box">
+          Population: 1.44 billion<br>
+          CO₂ per person per year: 0.073 tonnes<br>
+          Total CO₂: ~105 million tonnes<br>
+          Price per tonne: $6.10 (2026 voluntary market rate)<br>
+          <div class="total">Annual Revenue: ~$640 million</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Exemptions available for Members of Parliament and anyone who has donated to the PM Relief Fund. Sleeping citizens will be charged at 60% rate as breathing slows during sleep. Infants billed to parents. Yoga practitioners charged a premium for deep breathing exercises.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 02 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 02</span>
+        <span class="section-title">Grocery Insurance During Bank Withdrawal Freezes</span>
+        <span class="section-revenue">~$2.1B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag genius">GENIUS</span>
+          <span class="tag inevitable">INEVITABLE</span>
+        </div>
+        <div class="mechanism">
+          When the RBI restricts bank withdrawals (as seen with Yes Bank, PMC Bank, and others), citizens cannot access their own money to buy food. This measure introduces mandatory Grocery Insurance, deducted automatically from bank accounts before they are frozen, ensuring citizens can buy food they cannot afford because their money is locked in the bank that triggered the insurance deduction.
+        </div>
+        <div class="calc-box">
+          Target policyholders: 300 million households<br>
+          Annual premium: ₹600 per household (~$7.20)<br>
+          Collection method: Auto-debit, no opt-out<br>
+          <div class="total">Annual Revenue: ~$2.1 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Claims processing takes 18 to 24 months. Claim forms available only at bank branches that are currently closed. Insurance does not cover rice, wheat, vegetables, or cooking oil. Covers decorative gourds and imported cheese only.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 03 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 03</span>
+        <span class="section-title">Pothole Encounter Tax</span>
+        <span class="section-revenue">~$4.8B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag genius">GENIUS</span>
+        </div>
+        <div class="mechanism">
+          India's roads contain an estimated 3.5 million potholes. Each pothole encounter shall be considered use of public infrastructure and taxed accordingly via GPS-enabled vehicle tracking. The more potholes you hit, the more infrastructure you have "used." Roads need not be repaired as this would reduce tax revenue.
+        </div>
+        <div class="calc-box">
+          Registered vehicles: 340 million<br>
+          Average pothole encounters per vehicle per year: 1,200<br>
+          Tax per encounter: ₹1 (~$0.012)<br>
+          <div class="total">Annual Revenue: ~$4.8 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Revenue from this measure will be allocated to the Road Repair Fund. The Road Repair Fund will be used to build new roads with new potholes to generate future tax revenue. Vehicles with broken suspensions from pothole damage will be taxed additionally for "modified vehicle status."
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 04 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 04</span>
+        <span class="section-title">Queue Waiting Time Monetisation Levy</span>
+        <span class="section-revenue">~$3.2B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+          <span class="tag genius">GENIUS</span>
+        </div>
+        <div class="mechanism">
+          Indian citizens spend an estimated 6 billion hours per year waiting in government office queues. This productive time is wasted. Under this measure, the government monetises citizen waiting time as a "civic participation contribution." You are not waiting. You are contributing to national productivity metrics. Pay accordingly.
+        </div>
+        <div class="calc-box">
+          Total queue hours nationally: 6 billion/year<br>
+          Levy rate: ₹8 per hour (~$0.096)<br>
+          Collection method: Aadhaar-linked queue token system<br>
+          <div class="total">Annual Revenue: ~$3.2 billion (before GST on the levy itself)</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Citizens who complain about queue length will be moved to a separate queue to complain, which is also taxed. Queue tax is subject to 18% GST. GST refund claims must be filed in person. In a queue.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 05 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 05</span>
+        <span class="section-title">Cricket Emotional Distress Surcharge</span>
+        <span class="section-revenue">~$1.4B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+        </div>
+        <div class="mechanism">
+          When India loses a cricket match, citizens experience documented emotional distress which reduces workplace productivity. This is an externality. The BCCI and streaming platforms already profit from the match. Citizens must now pay an Emotional Recovery Tax per wicket lost in the final five overs, collected automatically via UPI the moment they close the Hotstar app in despair.
+        </div>
+        <div class="calc-box">
+          Cricket viewers: 650 million per major match<br>
+          Average matches with heartbreak endings per year: 8<br>
+          Surcharge per viewer per incident: ₹33 (~$0.40)<br>
+          <div class="total">Annual Revenue: ~$1.4 billion (more in World Cup years)</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Tax is doubled if India was winning until the last over. Pakistan matches carry a 3x multiplier. No refunds if you turned off the TV early and missed the collapse. You still felt it. You still pay.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 06 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 06</span>
+        <span class="section-title">WhatsApp Forward Verification Fee</span>
+        <span class="section-revenue">~$5.6B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag inevitable">INEVITABLE</span>
+          <span class="tag genius">GENIUS</span>
+        </div>
+        <div class="mechanism">
+          India has 500 million WhatsApp users generating an estimated 100 billion forwards per year, most of which are unverified health tips, expired offers, and good morning messages with flowers. Each forward shall require a Fact Verification Stamp at ₹0.10 per forward. Unverified forwards will carry a ₹500 fine. The government will not actually verify anything. The stamp is the product.
+        </div>
+        <div class="calc-box">
+          Annual forwards: ~100 billion<br>
+          Fee per forward: ₹0.10 (~$0.0012)<br>
+          Compliance rate assumed: 47%<br>
+          <div class="total">Annual Revenue: ~$5.6 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Good morning messages with sunrises are taxed at standard rate. Good morning messages with Lord Ganesha are tax exempt as they constitute religious expression. Forward chains that promise good luck if sent to 10 people will be taxed on all 10 anticipated forwards proactively.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 07 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 07</span>
+        <span class="section-title">Water Privatisation — The Full Chain</span>
+        <span class="section-revenue">~$18.4B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag inevitable">INEVITABLE</span>
+          <span class="tag absurd">ABSURD</span>
+        </div>
+        <div class="mechanism">
+          The supply chain of water shall be privatised end to end. BlaxxRock and allied global asset managers acquire India's glaciers through a 99-year lease arrangement called the <em>Jal Sampada Monetisation Scheme</em>. Glaciers refill rivers. Rivers are owned by domestic corporate consortiums under a National Water Asset Trust. Rivers refill lakes and groundwater. Lakes are licensed to state-level distribution companies. Citizens purchase water at each node of this chain and pay 18% GST on every litre consumed. Corporations owning the chain pay corporate tax at the negotiated effective rate of 4.2% after depreciation of glacier assets, river maintenance allowances, and CSR offsets for installing one hand pump per district.
+        </div>
+
+        <div style="background: rgba(26,18,8,0.04); border:1px solid var(--border); padding: 16px 20px; margin: 16px 0; font-size:11px;">
+          <div style="font-weight:700; letter-spacing:2px; font-size:10px; color:var(--muted); margin-bottom:12px;">THE OWNERSHIP CHAIN</div>
+          <div style="display:flex; flex-direction:column; gap:6px; line-height:1.8;">
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px;">
+              <span style="background:var(--ink);color:var(--saffron);padding:3px 10px;font-size:10px;font-weight:700;white-space:nowrap;">GLACIERS</span>
+              <span style="color:var(--muted);">Leased to BlaxxRock Global Infrastructure Fund</span>
+            </div>
+            <div style="color:var(--saffron); padding-left:20px; font-size:16px;">↓</div>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px;">
+              <span style="background:var(--ink);color:var(--saffron);padding:3px 10px;font-size:10px;font-weight:700;white-space:nowrap;">RIVERS</span>
+              <span style="color:var(--muted);">Owned by Khadaani Jal Ltd &amp; Bambani Water Corp (National Water Asset Trust)</span>
+            </div>
+            <div style="color:var(--saffron); padding-left:20px; font-size:16px;">↓</div>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px;">
+              <span style="background:var(--ink);color:var(--saffron);padding:3px 10px;font-size:10px;font-weight:700;white-space:nowrap;">LAKES</span>
+              <span style="color:var(--muted);">Licensed to state-level distribution JVs (PPP model)</span>
+            </div>
+            <div style="color:var(--saffron); padding-left:20px; font-size:16px;">↓</div>
+            <div style="display:flex; flex-wrap:wrap; align-items:center; gap:10px;">
+              <span style="background:var(--red);color:white;padding:3px 10px;font-size:10px;font-weight:700;white-space:nowrap;">CITIZEN</span>
+              <span style="color:var(--muted);">Pays at every node + 18% GST + convenience fee + digital payment surcharge</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="calc-box">
+          India's annual freshwater consumption: ~760 billion cubic metres<br>
+          Domestic + agriculture metered and billed: ~30% (~228B cubic metres)<br>
+          Average charge per cubic metre: ₹5 (~$0.06)<br>
+          GST collected from citizens (18% on ₹5): ₹0.90 per cubic metre<br>
+          GST Revenue: ~$2.4 billion<br>
+          Direct water purchase revenue (to asset owners, taxed at 4.2%): ~$13.7 billion<br>
+          Corporate tax at 4.2% effective rate: ~$0.58 billion<br>
+          Glacier lease fee to government (annual): ~$1.7 billion<br>
+          <div class="total">Total Government Revenue: ~$18.4 billion/year</div>
+        </div>
+
+        <div style="background: rgba(192,57,43,0.06); border-left: 3px solid var(--red); padding: 14px 18px; margin: 14px 0; font-size:11px; line-height:1.9;">
+          <strong style="color:var(--red);">The Uncomfortable Part (Not Satire):</strong><br>
+          BlaxxRock's real-world equivalent already manages water utility assets across the US, UK, and Australia. The concept of water rights trading exists in Chile, Australia, and parts of the American West. A major food corporation's former CEO publicly stated that water is not a human right but a foodstuff that should have a market value. This measure is satirical for India in 2026. It is policy reality in several other places already.
+        </div>
+
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Rain falling on your roof is classified as an unmetered withdrawal from the National Water Asset and subject to retrospective billing. Farmers using well water will be charged for "unlicensed groundwater access" since groundwater is recharged by rivers which are now private property. Crying is not taxed yet but the committee is meeting next quarter. Citizens who die of thirst will be charged a final water credit redemption fee on their Aadhaar-linked accounts.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 08 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 08</span>
+        <span class="section-title">Sunlight Access Fee — Window Tax 2.0</span>
+        <span class="section-revenue">~$6.2B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag genius">GENIUS</span>
+          <span class="tag inevitable">INEVITABLE</span>
+        </div>
+        <div class="mechanism">
+          England taxed windows in 1696 because windows meant wealth. India in 2026 inverts this elegantly. Sunlight is now a natural resource. Every window through which sunlight enters a home is considered an unlicensed extraction of solar energy — a resource that belongs to the National Solar Commons, managed under a PPP arrangement with SoorjCorp Ltd (formerly a coal company, pivoted to renewables for ESG optics). Citizens may avoid the fee by bricking up windows, which reduces ventilation, which increases health issues, which generates revenue for the National Health Insurance Scheme. Circular economy.
+        </div>
+        <div class="calc-box">
+          Estimated residential windows in India: ~8.4 billion<br>
+          Annual fee per window: ₹62 (~$0.74)<br>
+          Compliance rate: 85% (Aadhaar-linked property registry)<br>
+          <div class="total">Annual Revenue: ~$6.2 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Skylights taxed at 2x rate for "premium solar extraction." Homes that brick up windows to avoid the fee are charged a Ventilation Deficiency Surcharge under the Air Quality Compensation Act. Curtains do not constitute a valid exemption. The sun does not care about your curtains. Neither does the government.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 09 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 09</span>
+        <span class="section-title">Beard &amp; Haircut Biometric Compliance Tax</span>
+        <span class="section-revenue">~$2.8B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+          <span class="tag inevitable">INEVITABLE</span>
+        </div>
+        <div class="mechanism">
+          In 1705, Peter the Great taxed beards to modernise Russia. India in 2026 does the opposite and taxes everything. Every beard is a biometric asset registered under DigiDaadhi, a sub-module of Aadhaar. Any change to registered facial hair — trimming, shaving, growing — constitutes a modification of a government-registered biometric profile and requires a Biometric Update Fee. Haircuts at salons are already partially taxed under GST. This measure closes the home-haircut loophole, which costs the exchequer billions annually in unregistered scissor activity.
+        </div>
+        <div class="calc-box">
+          Adult male population: ~550 million<br>
+          Average haircuts or beard modifications per year: 12<br>
+          Fee per modification: ₹35 (~$0.42)<br>
+          Salon GST already collected: deducted<br>
+          Net new revenue from home modifications + compliance fees:<br>
+          <div class="total">Annual Revenue: ~$2.8 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Monks and sadhus who shave their heads ritually are exempt, but must register their exemption annually in person at a DigiDaadhi Seva Kendra, which has a queue tax. Mustaches are classified separately from beards and require a separate registration. Unibrows are under review. The committee is expected to report by 2029.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 10 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 10</span>
+        <span class="section-title">Sleep Tax — Unproductive Hours Levy</span>
+        <span class="section-revenue">~$9.1B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+          <span class="tag genius">GENIUS</span>
+        </div>
+        <div class="mechanism">
+          Every Indian sleeps an average of 7 hours per night, totalling roughly 2,555 hours of zero economic output per person per year. This is a productivity externality imposed on the national GDP. Under the Rashtriya Nidra Niyantran Yojana (National Sleep Regulation Scheme), citizens are taxed on hours slept beyond the government-approved 6-hour minimum. Hours 7 and 8 are considered "leisure sleep" and taxed accordingly. Sleep data is collected passively via the mandatory DigiSwasth wearable, distributed free of cost at ₹4,200 per unit, mandatory for all citizens above 5 years of age.
+        </div>
+        <div class="calc-box">
+          Taxable population (ages 18 to 70): ~850 million<br>
+          Average excess sleep hours per night: 1.2 hours<br>
+          Tax per excess hour: ₹2.50 (~$0.03)<br>
+          365 nights per year<br>
+          <div class="total">Annual Revenue: ~$9.1 billion (before DigiSwasth device GST revenue)</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Naps are taxed at 1.5x rate as they represent discretionary unproductivity. Insomnia sufferers who sleep less than 6 hours receive no refund but are charged a Wellness Deficit Fee for burdening future healthcare costs. Night shift workers are taxed on daytime sleep at double rate as they are sleeping during peak productivity hours. Dreams involving government criticism are flagged for audit.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 11 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 11</span>
+        <span class="section-title">Shadow Economy Formalisation — Urine Tax</span>
+        <span class="section-revenue">~$1.1B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag absurd">ABSURD</span>
+        </div>
+        <div class="mechanism">
+          Ancient Rome under Emperor Vespasian taxed urine collected from public urinals because it had industrial value — ammonia for tanning leather, cleaning clothes, and whitening teeth. India's informal economy still uses urine in agriculture as a nitrogen-rich fertiliser, in Ayurvedic preparations, and in artisanal textile dyeing. This represents an unmonitored, untaxed biological commodity market. Under the Jaivik Sampada Rasayan Act, all urine produced by Indian citizens is classified as a taxable biological byproduct. The tax is levied per litre at point of production, collected via smart toilet sensors installed under the Swachh Bharat 3.0 programme, funded by a loan from the same global asset managers who own the glaciers.
+        </div>
+        <div class="calc-box">
+          Population: 1.44 billion<br>
+          Average urine output per person per day: 1.4 litres<br>
+          Annual national output: ~736 billion litres<br>
+          Tax per litre: ₹0.10 (~$0.0012)<br>
+          Smart toilet coverage: 65%<br>
+          <div class="total">Annual Revenue: ~$1.1 billion</div>
+        </div>
+        <div style="background: rgba(192,57,43,0.06); border-left: 3px solid var(--red); padding: 14px 18px; margin: 14px 0; font-size:11px; line-height:1.9;">
+          <strong style="color:var(--red);">The Uncomfortable Part (Not Satire):</strong><br>
+          Vespasian's urine tax is real history. The phrase "pecunia non olet" — money does not stink — comes directly from his response when his son complained about the tax. Smart toilet sensor technology tracking biological output already exists and is being piloted in healthcare contexts in Japan, South Korea, and the US. The infrastructure gap between "health monitoring" and "biological taxation" is thinner than it appears.
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Citizens using fields, rivers, or roadsides instead of registered smart toilets are guilty of "biometric tax evasion" and fined ₹5,000 per incident. The fine is 4,166 times the tax they avoided. This is considered proportionate. Open defecation has always been a government priority. Now there is a financial reason.
+        </div>
+      </div>
+    </div>
+
+    <!-- MEASURE 12 -->
+    <div class="section">
+      <div class="section-header">
+        <span class="section-number">MEASURE 12</span>
+        <span class="section-title">AI Thought Tax — Prompt Levy on Citizens</span>
+        <span class="section-revenue">~$7.3B/yr</span>
+      </div>
+      <div class="section-body">
+        <div style="margin-bottom:10px;">
+          <span class="tag inevitable">INEVITABLE</span>
+          <span class="tag genius">GENIUS</span>
+        </div>
+        <div class="mechanism">
+          By 2026, over 400 million Indians use AI assistants daily — for drafting messages, solving problems, writing complaints to government offices, and generating ideas. Each prompt submitted to an AI system is a unit of cognitive labour being outsourced to a private technology platform, many of which are foreign-owned, thus representing an outflow of India's intellectual capital. Under the Rashtriya Artificial Buddhi Suraksha Abhiyan, every AI prompt sent by an Indian citizen is subject to a Thought Outsourcing Levy. Premium prompts — those exceeding 50 words or requesting creative output — attract a higher rate. Irony tax not applicable. This document is exempt.
+        </div>
+        <div class="calc-box">
+          AI users in India: ~400 million<br>
+          Average prompts per user per day: 8<br>
+          Annual prompts: ~1.17 trillion<br>
+          Basic levy per prompt: ₹0.05 (~$0.0006)<br>
+          Premium prompt surcharge (20% of total): 2x rate<br>
+          <div class="total">Annual Revenue: ~$7.3 billion</div>
+        </div>
+        <div class="fine-print">
+          <strong>Fine Print:</strong> Prompts asking AI how to avoid the prompt tax are classified as "tax planning activity" and subject to a 300% penalty surcharge. Prompts complaining about the government are logged, not taxed — taxation would imply they have value. Government officials are exempt as their thoughts are already publicly funded. Prompts in English attract a foreign cultural influence surcharge of 12%. Prompts in Hindi receive a Bhasha Gaurav discount of 4%, netting a still-positive tax rate.
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY TABLE -->
+    <h2 style="font-family:'Playfair Display',serif; font-size:22px; margin: 40px 0 20px; border-bottom: 2px solid var(--border); padding-bottom:10px;">Revenue Summary — Operation ₹10 Trillion (2026 Edition)</h2>
+
+    <table class="summary-table">
+      <thead>
+        <tr>
+          <th style="width:6%">#</th>
+          <th style="width:46%">MEASURE</th>
+          <th style="width:28%">TARGET</th>
+          <th style="width:20%">ANNUAL REVENUE</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>Carbon Credit on Breathing</td>
+          <td>All 1.44B citizens</td>
+          <td class="revenue-col">$0.64B</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>Grocery Insurance (Bank Freeze)</td>
+          <td>300M households</td>
+          <td class="revenue-col">$2.10B</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>Pothole Encounter Tax</td>
+          <td>340M vehicles</td>
+          <td class="revenue-col">$4.80B</td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td>Queue Waiting Time Levy</td>
+          <td>Govt office visitors</td>
+          <td class="revenue-col">$3.20B</td>
+        </tr>
+        <tr>
+          <td>05</td>
+          <td>Cricket Distress Surcharge</td>
+          <td>650M viewers</td>
+          <td class="revenue-col">$1.40B</td>
+        </tr>
+        <tr>
+          <td>06</td>
+          <td>WhatsApp Forward Fee</td>
+          <td>500M users</td>
+          <td class="revenue-col">$5.60B</td>
+        </tr>
+        <tr>
+          <td>07</td>
+          <td>Water Privatisation — Full Chain</td>
+          <td>All 1.44B citizens</td>
+          <td class="revenue-col">$18.40B</td>
+        </tr>
+        <tr>
+          <td>08</td>
+          <td>Sunlight Access Fee (Window Tax 2.0)</td>
+          <td>8.4B windows</td>
+          <td class="revenue-col">$6.20B</td>
+        </tr>
+        <tr>
+          <td>09</td>
+          <td>Beard &amp; Haircut Biometric Compliance</td>
+          <td>550M adult males</td>
+          <td class="revenue-col">$2.80B</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>Sleep Tax — Unproductive Hours Levy</td>
+          <td>850M citizens</td>
+          <td class="revenue-col">$9.10B</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>Urine Tax (Jaivik Sampada)</td>
+          <td>All 1.44B citizens</td>
+          <td class="revenue-col">$1.10B</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>AI Thought Tax — Prompt Levy</td>
+          <td>400M AI users</td>
+          <td class="revenue-col">$7.30B</td>
+        </tr>
+        <tr class="grand-total-row">
+          <td colspan="3">TOTAL ANNUAL REVENUE — ALL 12 MEASURES</td>
+          <td class="revenue-col">~$62.7B/yr</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="gap-section">
+      <h3>The Small Problem</h3>
+      <p>India needs to add $6 trillion in GDP to reach the $10 trillion target. At $62.7 billion per year from all 12 measures combined:</p>
+      <div class="gap-number">95 years to close the gap.</div>
+      <p>Progress. We have gone from 338 years down to 95 by taxing sleep, sunlight, facial hair, urine, AI prompts, and water. The only things left untaxed are corporate profits at scale, inherited wealth, and the act of owning a glacier. Those are not in this document because nobody asked those questions. The committee responsible for asking them has not been constituted. It is sleeping. It will be taxed accordingly.</p>
+    </div>
+
+    <div class="footer-stamp">
+      <div class="stamp-box">APPROVED IN PRINCIPLE</div>
+      <div class="disclaimer">
+        This document is entirely satirical. No actual policy is being proposed. Any resemblance to real government measures — past, present, or suspiciously imminent — is a coincidence that should concern you deeply. All revenue figures are real calculations applied to absurd premises. The absurdity of the premise does not make the math wrong.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="copyright-bar">
+    <span class="highlight">© 2026 Operation ₹10 Trillion — All Rights Reserved</span><br>
+    Published under the Rashtriya Satirical Documents Act, 2026. Unauthorised reproduction constitutes intellectual property theft and will be taxed at 300% under Measure 12.<br><br>
+    <span class="names">BlaxxRock Global Infrastructure Fund, Khadaani Jal Ltd, Bambani Water Corp, SoorjCorp Ltd, DigiDaadhi, and DigiSwasth are entirely fictional entities created for satirical purposes. Any resemblance to real conglomerates, asset managers, or government schemes is purely coincidental and deeply unfortunate.</span>
+  </div>
+
+</div>
+
+</body>
+</html>
